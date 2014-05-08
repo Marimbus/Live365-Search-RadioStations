@@ -1,4 +1,4 @@
-package com.lazerycode.selenium;
+package com.marimbus.selenium;
 
 public enum BrowserType {
   FIREFOX("firefox"),

@@ -1,4 +1,4 @@
-package com.lazerycode.selenium;
+package com.marimbus.selenium;
 
 import com.opera.core.systems.OperaDriver;
 
@@ -18,15 +18,14 @@ import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
-//import static org.junit.Assert.fail;
+
 
 
 import java.util.*;
 
-import static com.lazerycode.selenium.BrowserType.FIREFOX;
+import static com.marimbus.selenium.BrowserType.CHROME;
 
 public class SeleniumBase {
-//	private static StringBuffer verificationErrors = new StringBuffer();
     private static ResourceBundle _prop = ResourceBundle.getBundle("dev");
     private static BrowserType browserType;
     private static List<WebDriver> webDrivers = Collections.synchronizedList(new ArrayList<WebDriver>());
@@ -49,48 +48,20 @@ public class SeleniumBase {
         }
         if (browserType == null) {
             System.err.println("Unknown browser specified, defaulting to 'Firefox'...");
-            browserType = FIREFOX;
+            browserType = CHROME;
         }
     }
-
- /*   @BeforeClass
-    public static void setUpTest() {
-        for (BrowserType browser : BrowserType.values()) {
-            if (browser.toString().toLowerCase().equals(_prop.getString("browser").toLowerCase())) {
-                browserType = browser;
-            }
-        }
-        if (browserType == null) {
-            System.err.println("Unknown browser specified, defaulting to 'Firefox'...");
-            browserType = FIREFOX;
-        }
-    }*/
     @AfterSuite
    public static void tearDown() {
         for (WebDriver driver : webDrivers) {
             driver.quit();
         }
     }
-
-/*    @AfterClass
-    public static void tearDown() {
-        for (WebDriver driver : webDrivers) {
-            driver.quit();
-            String verificationErrorString = verificationErrors.toString();
-    		if (!"".equals(verificationErrorString)) {
-    			fail(verificationErrorString);
-    		}
-        }
-    }*/
     @AfterMethod
     public static void clearCookies() {
         getDriver().manage().deleteAllCookies();
     }
 
-/*    @After
-    public static void clearCookies() {
-        getDriver().manage().deleteAllCookies();
-    }*/
         protected static WebDriver getDriver() {
         return driverForThread.get();
     }
