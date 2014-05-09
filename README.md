@@ -5,4 +5,4 @@ Live365-Search-RadioStations
 3. CD into project directory
 4. mvn clean install -U -Pselenium-tests
 5. mvn verify -Pselenium-tests -Dbrowser=chrome (to run test on chrome)
-6. mvn verify -Pselenium-tests -Dbrowser=firefox (to run test on firefox)
+6. mvn verify -Pselenium-tests (to run test on firefox)
