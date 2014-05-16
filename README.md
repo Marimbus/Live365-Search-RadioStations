@@ -1,5 +1,7 @@
 Live365-Search-RadioStations 
 ============================
+Description: Extract music genres from tech cloud, search and verify genres top radio stations
+
 1. Open a terminal window/command prompt
 2. Clone this project.
 3. CD into project directory
