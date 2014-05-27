@@ -20,10 +20,10 @@ public class Live365SearchTEST extends SeleniumBase {
 	private  final String EXPECTED_GENRE_PAGE_TITLE_TEMPLATE = "Listen to Free %s Music Online - Live365 Internet Radio";
 	private  final String baseUrl= "http://www.live365.com/new/index.live";
 
-	@Test
+/*	@Test
 	public void testToFail(){	
 		doGenreSearch("RANDOM STUFF");
-	}
+	}*/
 	@Test
 	public void testGenres(){	
 		List<String> extractedGenresList = this.getListOfGenres();		
