@@ -86,28 +86,4 @@ public class Live365SearchTEST extends SeleniumBase {
 		String actualResult = searchResult.getText().toLowerCase();
 		Assert.assertEquals(actualResult, expectedResult); 
 	}	
-	
-	/*public void doGenreSearch (String currentGenre) {
-
-		System.out.println("Search and verify top radio station - "+ currentGenre.toUpperCase());
-		testDriver = getDriver();
-		testDriver.get(baseUrl);
-
-//		                   assert page title
-
-		Assert.assertEquals(MAIN_PAGE_TITLE, testDriver.getTitle());
-
-//			navigate to search station field
-
-		WebElement searchField = testDriver.findElement(By.name("query"));
-		searchField.clear();
-		searchField.sendKeys(currentGenre);	
-		testDriver.findElement(By.xpath(".//*[@class='searchForm']/input")).click();
-
-//                 assert top stations are found
-		testDriver.switchTo().frame("contentFrame");	
-		List<WebElement> foundStations = testDriver.findElements(By.className("stationCont"));	
-		Assert.assertTrue(foundStations != null && foundStations.size() > 0,"NO STATIONS FOUND");
-
-		}*/
 }
